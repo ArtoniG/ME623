@@ -1,0 +1,57 @@
+---
+title: "Efeito da laranja pêra na cor do frango assado."
+author: "Pietro Sanz, 157022. Guilherme Artoni, Eduardo Romero"
+date: "15/06/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(jpeg)
+```
+
+## Introdução
+
+Neste experimento avaliamos se deixar a tulipa de molho em suco de laranja pêra altera sua cor final quando assado.
+
+## Objetivo
+
+Além de ver o efeito do suco da laranja também é de interesse nosso avaliar se o tempo que o frango ficou de molho também altera o resultado final.
+
+## Metodologia
+
+Fizemos um experimento aleatorizado com blocos completos generalizados (GCBD) de 1 tratamento com 3 níveis (0 minuto de molho, 30 minutos de molho e 2 horas de molho). Cada tulipa é uma unidade experimental e cada forno um bloco. Temos 12 tulipas por bloco, 4 tulipas para cada nível de tratamento e 4 tulipas não receberam suco (controle). O procedimento do experimento foi o seguinte:
+
+1. Preaquecer o forno a 220° por 10min;
+
+2. Aleatorizar os tratamentos aos frangos e aleatorizar a ordem dos frangos na bandeja;
+
+3. Identificar os frangos na bandeja com foto;
+
+4. Colocar no forno por 1h10, com a travessa perpendicular a porta do forno;
+
+5. Retirar do forno e tirar a foto com os frangos identificados;
+
+Para ter uma variável resposta contínua vamos usar a paleta de cores a seguir, e cada integrante do grupo entrevistar uma pessoa que encaixará cada uma das 36 observações em uma cor da paleta. Então tiraremos a média aritimética das respostas. 
+
+![Alt text](/Users/Pietro/Pictures/paleta.jpg)
+
+## Resultados
+
+O modelo RCBD é dado pela fórmula:
+
+$y_{ij} = \mu + \alpha_i + \beta_j + (\alpha \beta)_{i,j} + \epsilon_{ijk}$ com i = 1,2,3 e j = 1,2,3,4. e k = 1,2,3.
+
+```{r}
+roca <- matrix(c(9,5,7,8,11,11,9,12,13,12,14,13), ncol = 4, nrow = 3, byrow = TRUE)
+
+pi <- matrix(c(7,6,6,8,11,9,12,12,12,15,12,14), ncol = 4, nrow = 3, byrow = TRUE)
+
+gui <- matrix(c(9,10,11,11,17,14,16,17,20,15,14,18), ncol = 4, nrow = 3, byrow = TRUE)
+
+
+```
+
+
+
+## Conclusão
