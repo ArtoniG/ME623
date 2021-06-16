@@ -1,6 +1,6 @@
 ---
 title: "Efeito da laranja pêra na cor do frango assado."
-author: "Pietro Sanz, 157022. Guilherme Artoni, Eduardo Romero"
+author: "Pietro Sanz, 157022; Guilherme Artoni, 160318; Eduardo Romero, 170194"
 date: "15/06/2021"
 output: html_document
 ---
@@ -11,36 +11,64 @@ library(jpeg)
 ```
 
 ## Introdução
+A comida brasileira é conhecida por sua grande variedade de alimentos, e não apenas por eles, mas pelos diversos modos de preparo que o brasileiro tem. Um dos alimentos mais utilizados é o frango, por sua versatilidade no preparo, como à milanesa, à parmegiana, grelhado e assado, esse ultimo sendo um dos mais utilizados por sua praticidade e grande leque de opções que oferece. Com isso, um aspecto visual do frango o torna mais atrativo para algumas pessoas, sua cor. Quando o frango perde aquela aparência palida e passa para uma mais dourada, ele se diferencia. Uma tese de que, quando deixado em contato com suco de laranja, o frango doura com mais facilidade, e este é o objetivo do experimento.
 
-Neste experimento avaliamos se deixar a tulipa de frango (meio da asa) de molho em suco de laranja pêra altera sua cor final quando assado. Decidimos que uma tulipa seria nossa unidade experimental pois elas são suficientemente uniformizadas.
 
 ## Objetivo
 
-Além de ver o efeito do suco da laranja também é de interesse nosso avaliar se o tempo que o frango ficou de molho também altera o resultado final.
+Frangos foram separados em três grupos para verificar se realmente o suco de laranja tem efeito na cor do frango assado. Para isso, cada grupo, contendo 12 tulipas de frango, foi exposta à um tratamento de suco de laranja. Cada tratamento é referente ao tempo em que o frango fica imerso em suco de laranja pêra, o primeiro nível permace 0 minutos em contato com o suco, o segundo fica imerso por 30 minutos e o terceiro fica imerso por 120 minutos no suco de laranja. Com isso, ao final do experimento a questão sobre se laranja afeta a cor da tulipa de frango assada será respondida.
+
+## Planejamento
+
+Quando decidido o experimento, primeiramente foi planejado com filés de peito de frango, e para isso foram feitas amostras piloto para idêntificar a execução do experimento. Com duas amostras piloto, sendo realizadas em duas temperaturas diferentes (180°C e 220°C) e utilizando o filé de peito de frango separados em dois grupos, um de molho na laranja e outro não, obteve-se resultados não confiáveis. 
+
+Isso ocorreu por dois principais motivos. O primeiro é a respeito do tamanho do frango, no início do experimento antes do frango ser colocado de molho em suco de laranja pêra, ele era dividido em dois grupos e cortados em tamanhos iguais, o grupo que era colocado no suco inchava e no momento de colocar no forno os pedaços sem laranja ficavam menores, e deste modo complicava a execução do experimento, pois os tamnhos podiam interferir nos resultados.
+
+O segundo ponto foi, ao tentar resolver este problema, os frangos eram dividos em dois grupos e um era colocado de molho, e no momento de ir ao forno eram deixados em tamanhos iguais. Porém, quando colocados no forno eles perdiam o suco absorvido e ficavam menores que os pedaços sem suco. Com isso, não era possível identificar se os frangos ficavam mais dourados por conta de estarem menores e mais finos ou se era efeito da laranja.
+
+        #### colocar as imagens de file de frango
+
+Para contornar este problema foi pensado em utilizar as tulipas de frango, ja que quando deixadas de molho seus tamanhos não mudavam como os filés de frango e seu tamanho era uniforme quando comparadas entre sí. Por este motivo, foi utilizado a tulipa como sendo a unidade experimental, com um tratamento de três níveis (0 minutos, 30 minutos e 120 minutos imerso em suco de laranja pêra), um bloco com três níveis (a casa de cada participante do grupo) e 4 replicações ($n*a*b = 4*3*3 = 36$), sendo feito 12 frangos, quatro de cada tratamento, por integrante, totalizando 36 unidades experimentais.
+
+      ##### colocar as imagens da forma de tulipas cruas e os molhos
+
 
 ## Metodologia
 
-Para isso, fizemos um experimento aleatorizado com blocos completos generalizados (GCBD) de 1 tratamento com 3 níveis (0 minuto de molho, 30 minutos de molho e 2 horas de molho). Cada tulipa é uma unidade experimental e cada forno um bloco. Como é melhor fazer um experimento balanceado precisamos de, no mínimo, 3 tulipas por bloco (uma por nível de tratamento). Para a análise decidimos fazer 4 replicações cada, tendo, portanto, $n*a*b = 4*3*3 = 36$ observações.
+Para realizar o experimento, foi elaborado um protocolo e planejamento para padronizar o experimento e controlar variáveis que não eram de interesse. Primeiramente os frangos foram aleatorizados para serem divididos em três grupos, após isso o experimento era iniciado. Quando o primeiro grupo de tulipas era posto em uma tigela imerso por suco de laranja, o cronometro era iniciado e quando ele atingia 1 hora e 30 minutos o segundo grupo de tulipas era posto em uma segunda tigela com suco de laranja. Passados mais 20 minutos o forno era ligado à 220°C, e passados mais 10 minutos, totalizando 2 horas os 12 frangos eram postos em uma assadeira forrada com papel alumínio e organizados com base em 4 sorteios aleatórios de três itens sem reposição (realizado com antecedância),  de modo que a assadeira ficasse com 4 fileiras de 3 frangos, mas cada fileiira apresentando todos os tratamentos em sequência aleatória. 
 
-1. Preaquecer o forno a 220° por 10min;
+      #### foto dos frangos na assadeira com os numeros
+      
+Desse modo, obteve-se os três tratamentos codificados da seguinte maneira:
+1: Tulipa sem contato com laranja;
+2: Tulipa imersa por 30 minutos em suco de laranja pêra;
+3: Tulipa imersa por 120 minutos em suco de laranja pêra.
 
-2. Aleatorizar os tratamentos aos frangos e aleatorizar a ordem dos frangos na bandeja;
+Antes de levadas ao forno as tulipas eram identificadas na bandeja com foto. Feito isso, eram levadas ao forno por 1 hora e 30 minutos, eram retiradas e fotografadas em um ambiente claro, para posteriormente serem comparadas à uma paleta de cores e originar a variável resposta.
 
-3. Identificar os frangos na bandeja com foto;
+O processo descrito foi repetido três vezes no mesmo dia, uma vez por cada participante, cada um em sua respectiva casa.
 
-4. Colocar no forno por 1h10, com a travessa perpendicular a porta do forno;
 
-5. Retirar do forno e tirar a foto com os frangos identificados;
+Para transformar as fotos na variável resposta, as fotos foram comparadas a uma paleta gerada em um site que gera uma paleta de cores dado uma foto. Para gerá-la foi feito um corte da foto da bandeja com os frangos prontos, contendo os frangos dos três tratamentos. Para não viesar as respostas foi escolhido um mebro de cada casa (que não os participantes do experimento) para responder o número que representava cada frango na escala da paleta. 
 
-Para ter uma variável resposta contínua vamos usar a paleta de cores a seguir, e cada integrante do grupo entrevistou uma pessoa que encaixará cada uma das 36 observações em uma cor da paleta. Por fim, tiraremos a média aritimética das respostas.
+      #### foto da paleta
+      
+Após a coleta das respostas, foi tirado a média aritmética entre os três vetores de resposta (um de cada casa) e assim foi obtido a variável resposta do experimento.
 
-![Alt text](/Users/Pietro/Pictures/paleta.jpg)
+
+
+## ![Alt text] 
+## (/Users/Pietro/Pictures/paleta.jpg)
 
 ## Resultados
 
-O modelo GCBD é dado pela fórmula:
+O modelo do experimento GCBD é dado pela fórmula:
 
-$y_{ij} = \mu + \alpha_i + \beta_j + (\alpha \beta)_{i,j} + \epsilon_{ijk}$ com i = 1,2,3 e j = 1,2,3,4. e k = 1,2,3.
+$y_{ij} = \mu + \alpha_i + \beta_j + (\alpha \beta)_{i,j} + \epsilon_{ijk}$,
+
+com i = 1,2,3; j = 1,2,3,4 e k = 1,2,3.
+
+Com os dados coletados
 
 ```{r}
 
@@ -77,14 +105,22 @@ m_P <- (RP+BP+PP)/3
 dados <- data.frame(tratamento=as.factor(tratamento),
                     bloco=as.factor(bloco),
                     respostas=c(m_R,m_B,m_P))
-
-model <- aov(respostas ~ tratamento * bloco, data = dados)
-summary(model) ##efeito dos blocos se da pela subjetividade da análise.
-t <- TukeyHSD(model)$tratamento
-t
-
+dados
 ```
 
+
+```{r}
+model <- aov(respostas ~ tratamento * bloco, data = dados)
+summary(model) ##efeito dos blocos se da pela subjetividade da análise.
+```
+
+
+
+
+```{r}
+t <- TukeyHSD(model)$tratamento
+t
+```
 
 
 ## Conclusão
