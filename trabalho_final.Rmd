@@ -12,7 +12,7 @@ library(jpeg)
 
 ## Introdução
 
-Neste experimento avaliamos se deixar a tulipa de molho em suco de laranja pêra altera sua cor final quando assado.
+Neste experimento avaliamos se deixar a tulipa de frango (meio da asa) de molho em suco de laranja pêra altera sua cor final quando assado. Decidimos que uma tulipa seria nossa unidade experimental pois elas são suficientemente uniformizadas.
 
 ## Objetivo
 
@@ -20,7 +20,7 @@ Além de ver o efeito do suco da laranja também é de interesse nosso avaliar s
 
 ## Metodologia
 
-Fizemos um experimento aleatorizado com blocos completos generalizados (GCBD) de 1 tratamento com 3 níveis (0 minuto de molho, 30 minutos de molho e 2 horas de molho). Cada tulipa é uma unidade experimental e cada forno um bloco. Temos 12 tulipas por bloco, 4 tulipas para cada nível de tratamento e 4 tulipas não receberam suco (controle). O procedimento do experimento foi o seguinte:
+Para isso, fizemos um experimento aleatorizado com blocos completos generalizados (GCBD) de 1 tratamento com 3 níveis (0 minuto de molho, 30 minutos de molho e 2 horas de molho). Cada tulipa é uma unidade experimental e cada forno um bloco. Como é melhor fazer um experimento balanceado precisamos de, no mínimo, 3 tulipas por bloco (uma por nível de tratamento). Para a análise decidimos fazer 4 replicações cada, tendo, portanto, $n*a*b = 4*3*3 = 36$ observações.
 
 1. Preaquecer o forno a 220° por 10min;
 
@@ -32,26 +32,61 @@ Fizemos um experimento aleatorizado com blocos completos generalizados (GCBD) de
 
 5. Retirar do forno e tirar a foto com os frangos identificados;
 
-Para ter uma variável resposta contínua vamos usar a paleta de cores a seguir, e cada integrante do grupo entrevistar uma pessoa que encaixará cada uma das 36 observações em uma cor da paleta. Então tiraremos a média aritimética das respostas. 
+Para ter uma variável resposta contínua vamos usar a paleta de cores a seguir, e cada integrante do grupo entrevistou uma pessoa que encaixará cada uma das 36 observações em uma cor da paleta. Por fim, tiraremos a média aritimética das respostas.
 
 ![Alt text](/Users/Pietro/Pictures/paleta.jpg)
 
 ## Resultados
 
-O modelo RCBD é dado pela fórmula:
+O modelo GCBD é dado pela fórmula:
 
 $y_{ij} = \mu + \alpha_i + \beta_j + (\alpha \beta)_{i,j} + \epsilon_{ijk}$ com i = 1,2,3 e j = 1,2,3,4. e k = 1,2,3.
 
 ```{r}
-roca <- matrix(c(9,5,7,8,11,11,9,12,13,12,14,13), ncol = 4, nrow = 3, byrow = TRUE)
 
-pi <- matrix(c(7,6,6,8,11,9,12,12,12,15,12,14), ncol = 4, nrow = 3, byrow = TRUE)
 
-gui <- matrix(c(9,10,11,11,17,14,16,17,20,15,14,18), ncol = 4, nrow = 3, byrow = TRUE)
+#Yijk
+#i = tratamento (1,2,3)
+#j = observacao (1,2,3,4)
+#k = bloco      (1,2,3)
 
+tratamento <- rep(1:3,4)
+bloco <- rep(1:3,each=12)
+
+# rocato
+RR <- c(12,15,16,11,13,14,12,14,15,11,13,14)
+RB <- c(11,17,19,13,15,15,12,18,16,13,18,18)
+RP <- c(5,11,14,7,14,17,7,10,14,8,14,16)
+
+# gui
+
+BR <- c(8,10,11,6,8,10,6,8,11,6,9,10)
+BB <- c(11,19,21,8,18,17,6,20,17,6,19,19)
+BP <- c(3,9,9,3,9,14,3,7,9,6,9,14)
+
+# pi
+
+PR <- c(9,11,13,5,11,12,7,9,14,8,12,13)
+PB <- c(9,17,20,10,14,15,11,16,14,11,17,18)
+PP <- c(7,11,12,6,9,15,6,12,12,8,12,14)
+
+m_R <- (RR+BR+PR)/3
+m_B <- (RB+BB+PB)/3
+m_P <- (RP+BP+PP)/3
+
+dados <- data.frame(tratamento=as.factor(tratamento),
+                    bloco=as.factor(bloco),
+                    respostas=c(m_R,m_B,m_P))
+
+model <- aov(respostas ~ tratamento * bloco, data = dados)
+summary(model) ##efeito dos blocos se da pela subjetividade da análise.
+t <- TukeyHSD(model)$tratamento
+t
 
 ```
 
 
 
 ## Conclusão
+
+Concluimos que os tratamentos são diferentes entre si (p-valor < 1e-11), e que quando fazemos as comparações pareadas de tukey também rejeitamos a hipótese nula de que o tratamento de 30 minutos de suco é igual ao de duas horas.
